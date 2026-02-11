@@ -226,21 +226,21 @@ function renderRadiiAndShadows(container: HTMLElement) {
   // Shadows
   const shadowSection = el("section", "category");
   shadowSection.appendChild(sectionTitle("Shadows"));
-  const shadowGrid = el("div", "visual-grid");
+  const shadowList = el("div", "shadow-list");
   for (const v of SHADOWS) {
-    const item = el("div", "visual-item");
+    const row = el("div", "shadow-row");
     const box = el("div", "shadow-box");
     box.style.boxShadow = `var(${v})`;
-    item.appendChild(box);
+    row.appendChild(box);
+    const meta = el("div", "shadow-meta");
     const label = el("div", "visual-label");
     label.textContent = v.replace("--shadow-", "");
-    item.appendChild(label);
-    const val = el("div", "visual-value");
-    val.textContent = getVar(v) || "(not set)";
-    item.appendChild(val);
-    shadowGrid.appendChild(item);
+    meta.appendChild(label);
+    meta.appendChild(varLabel(v));
+    row.appendChild(meta);
+    shadowList.appendChild(row);
   }
-  shadowSection.appendChild(shadowGrid);
+  shadowSection.appendChild(shadowList);
   container.appendChild(shadowSection);
 }
 

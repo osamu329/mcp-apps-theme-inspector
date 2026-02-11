@@ -16,13 +16,27 @@ body {
 
 #app {
   max-width: 800px;
+  max-height: 864px;
+  overflow-y: scroll;
   margin: 0 auto;
-  padding: 16px;
+  padding: 0 16px 16px;
+}
+
+@media (max-width: 600px) {
+  #app {
+    max-height: none;
+    overflow-y: auto;
+  }
 }
 
 /* Header */
 .header {
-  margin-bottom: 20px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--color-background-primary, #ffffff);
+  margin: 0 -16px 20px;
+  padding: 12px 16px 0;
 }
 
 .header-row {
@@ -64,19 +78,21 @@ body {
   font-family: inherit;
   font-size: var(--font-text-sm-size, 13px);
   font-weight: var(--font-weight-medium, 500);
-  color: var(--color-text-secondary, #666);
+  color: var(--color-text-tertiary, #999);
   cursor: pointer;
-  border-bottom: 2px solid transparent;
-  transition: color 0.15s, border-color 0.15s;
+  border-bottom: 3px solid transparent;
+  transition: color 0.15s, border-color 0.15s, font-weight 0.15s;
 }
 
 .tab:hover {
-  color: var(--color-text-primary, #1a1a1a);
+  color: var(--color-text-secondary, #666);
+  border-bottom-color: var(--color-border-secondary, #eee);
 }
 
 .tab.active {
   color: var(--color-text-primary, #1a1a1a);
-  border-bottom-color: var(--color-border-inverse, #1a1a1a);
+  font-weight: var(--font-weight-bold, 700);
+  border-bottom-color: var(--color-border-info, #3b82f6);
 }
 
 /* Variables view */
@@ -292,11 +308,30 @@ body {
   border: var(--border-width-regular, 1px) solid var(--color-border-primary, #e0e0e0);
 }
 
+.shadow-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.shadow-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
 .shadow-box {
-  width: 48px;
-  height: 48px;
+  width: 80px;
+  height: 56px;
+  flex-shrink: 0;
   background: var(--color-background-primary, #ffffff);
   border-radius: var(--border-radius-md, 8px);
+}
+
+.shadow-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
 }
 
 .visual-label {

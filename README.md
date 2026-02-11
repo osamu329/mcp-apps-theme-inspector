@@ -4,6 +4,12 @@
 
 An [MCP Apps](https://github.com/modelcontextprotocol/ext-apps) tool that visualizes CSS theme variables injected by the host (e.g. Claude.ai). Runs as a Cloudflare Worker.
 
+## Screenshots
+
+| Variables (Light) | Preview (Light) | Preview (Dark) |
+|---|---|---|
+| ![Variables tab](docs/images/p1.png) | ![Preview tab](docs/images/p2.png) | ![Preview tab - Dark](docs/images/p3.png) |
+
 ## Features
 
 **Variables tab** — Semantic color group cards (Primary, Info, Success, Warning, Danger, …) each rendering mini-components (alert, badge, focus ring) styled with the group's `bg` / `text` / `border` / `ring` variables. Also shows typography scales (EN/JA), font families, font weights, border radii, and shadows.

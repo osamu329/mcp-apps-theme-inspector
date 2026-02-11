@@ -4,7 +4,7 @@
 
 An [MCP Apps](https://github.com/modelcontextprotocol/ext-apps) tool that visualizes CSS theme variables injected by the host (e.g. Claude.ai). Runs as a Cloudflare Worker.
 
-## Screenshots
+## Screenshots (on Claude.ai)
 
 | Variables (Light) | Preview (Light) | Preview (Dark) |
 |---|---|---|
